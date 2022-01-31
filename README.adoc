@@ -5,8 +5,8 @@
 
 View the following 2 files in your favorite editor:
 
-- src/clj/demo/core.clj*
-- test/clj/tst/demo/core.clj*
+- src/clj/demo/core.clj
+- test/clj/tst/demo/core.clj
 
 The namespace `tst.demo.core` shows a number of variations for defining and using Schemas,
 mostly via the `s/validate` function.
