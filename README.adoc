@@ -1,0 +1,46 @@
+
+# Plumatic Schema Demonstration Code
+
+## Source Code
+
+View the following 2 files in your favorite editor:
+
+- src/clj/demo/core.clj*
+- test/clj/tst/demo/core.clj*
+
+The namespace `tst.demo.core` shows a number of variations for defining and using Schemas,
+mostly via the `s/validate` function.
+
+The namespace `demo.core` shows typical examples of annotating Clojure functions with types for
+both function arguments and the return value.
+
+## Running the Unit Tests
+
+Ensure you have Java & Leiningen installed correctly: 
+
+```bash
+> java --version
+java 17.0.1 2021-10-19 LTS
+Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
+
+> lein --version
+Leiningen 2.9.8 on Java 17.0.1 Java HotSpot(TM) 64-Bit Server VM
+~/io-tupelo-demo/plumatic-schema >```
+```
+
+Then just run the unit tests:
+
+```bash
+> lein clean ; lein test
+-----------------------------------
+   Clojure 1.10.3    Java 17.0.1
+-----------------------------------
+
+lein test tst.demo.core
+
+Ran 10 tests containing 84 assertions.
+0 failures, 0 errors.
+```
+
+

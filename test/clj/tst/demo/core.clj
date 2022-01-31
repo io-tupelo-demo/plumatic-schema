@@ -2,7 +2,8 @@
   (:use demo.core tupelo.core tupelo.test)
   (:require
     [schema.core :as s]
-    [tupelo.string :as str])
+    [tupelo.string :as str]
+    [tupelo.schema :as tsk])
   (:import
     [java.lang System]
     [java.util Objects]))
@@ -143,16 +144,20 @@
 
   (is= 3 (int-div-by-2 6)) ; arg & return val are both integers
   (throws? (int-div-by-2 7)) ; return val is not an integer
-  )
 
+  ; disable Schema checking temporarily
+  (tsk/with-validation-disabled
+    (is= 5.0 (add-int-2 2.0 3.0)) ; double arg values fail Plumatic Schema
+    (is= 7/2 (int-div-by-2 7))) ; return val is a clojure.lang/Rational, not an integer
+
+  (throws? (int-div-by-2 7))) ; Schema is now enforced again
 
 ;-----------------------------------------------------------------------------
-; old stuff
+; old stuff #todo cleanup
 
 (dotest
   (def List-of-Maps  [{}])
-  (is= [{} {}]
-    (s/validate List-of-Maps [{} {}]))
+  (is= [{} {}] (s/validate List-of-Maps [{} {}]))
 
   ;validating array with key and map, not work
   (is= [0 {}]
