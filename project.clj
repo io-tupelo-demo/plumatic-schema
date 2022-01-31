@@ -2,15 +2,13 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [
-                 [org.clojure/clojure "1.10.2-alpha1"]
-                 [org.clojure/spec.alpha "0.2.187"]
+                 [org.clojure/clojure "1.10.3"]
                  [prismatic/schema "1.1.12"]
-                 [tupelo "20.07.01"]
+                 [tupelo "22.01.31"]
                  ]
   :plugins [
-            [com.jakemccrary/lein-test-refresh "0.24.1"]
+            [com.jakemccrary/lein-test-refresh "0.25.0"]
             [lein-ancient "0.6.15"]
-            [lein-codox "0.10.7"]
             ]
 
   :db "jdbc:postgresql://localhost/default"
